@@ -4,13 +4,10 @@ kind: Application
 metadata:
   name: <APP-NAME>
 spec:
-  sources:
-    - repoURL: <REPO-URL-HERE>
-      targetRevision: HEAD
-      path: argocd/appprojects
-    - repoURL: <REPO-URL-HERE>
-      targetRevision: HEAD
-      path: argocd/applications
+  source:
+    repoURL: <REPO-URL-HERE>
+    targetRevision: HEAD
+    path: argocd/applications
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd

@@ -14,7 +14,6 @@ This repository serves as a template for deploying applications to Kubernetes cl
 ├── apps/                       # Core application configurations
 ├── argocd/                     # ArgoCD definitions
 │   ├── app-of-apps.yaml
-│   ├── appprojects/
 │   └── applications/
 ├── .envrc                      # Direnv environment variables
 ├── .gitattributes              # Git attributes configuration
