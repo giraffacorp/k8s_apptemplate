@@ -12,9 +12,8 @@ This repository serves as a template for deploying applications to Kubernetes cl
 ```
 ├── .taskfiles/                 # Custom Taskfile scripts modules
 ├── apps/                       # Core application configurations
-├── argocd/                     # ArgoCD definitions
-│   ├── app-of-apps.yaml
-│   └── applications/
+  ├── argocd/                   # ArgoCD bootrap appset
+│   └── appset.yaml
 ├── .envrc                      # Direnv environment variables
 ├── .gitattributes              # Git attributes configuration
 ├── .gitignore                  # Git ignore rules
@@ -70,7 +69,7 @@ age:
 
 ### 3. Configure ArgoCD Integration
 
-Update the repository URL in `argocd/app-of-apps.yaml`:
+Update the repository URL in `argocd/appset.yaml`:
 
 ```yaml
 spec:
@@ -81,4 +80,4 @@ spec:
 ### 4. Add Your Applications
 
 1. Add your application manifests to the `apps/` directory
-1. Create ArgoCD application definitions in `argocd/applications/`
+1. Sync apps with `k apply -n argocd -f argocd/appset.yaml`
